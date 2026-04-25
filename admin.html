@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+</head>
+
+<body>
+
+<h2>Admin Login</h2>
+
+<input id="email" placeholder="Email">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<div id="panel" style="display:none">
+
+  <h2>Add Product</h2>
+
+  <input id="name" placeholder="Name">
+  <input id="desc" placeholder="Desc">
+  <input id="price" placeholder="Price">
+  <input id="img" placeholder="Image URL">
+
+  <button onclick="addProduct()">Add</button>
+</div>
+
+<script src="firebase.js"></script>
+<script src="auth.js"></script>
+
+<script>
+let currentUser = null;
+
+function login(){
+  firebase.auth().signInWithEmailAndPassword(email.value, pass.value)
+  .then(async user=>{
+    let uid = user.user.uid;
+
+    let admin = await checkAdmin(uid);
+
+    if(admin){
+      currentUser = uid;
+      document.getElementById("panel").style.display="block";
+    } else {
+      alert("Not admin");
+    }
+  });
+}
+
+function addProduct(){
+  db.collection("products").add({
+    name:name.value,
+    desc:desc.value,
+    price:price.value,
+    img:img.value
+  });
+
+  alert("Added");
+}
+</script>
+
+</body>
+</html>

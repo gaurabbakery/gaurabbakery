@@ -1,0 +1,87 @@
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI";
+  background:#f5f5f7;
+  color:#1d1d1f;
+}
+
+.header{
+  text-align:center;
+  padding:60px 20px 20px;
+}
+
+.brand{
+  font-size:52px;
+  font-weight:800;
+}
+
+.motto{ color:#444; }
+
+.topbar{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:20px;
+}
+
+#search{
+  width:300px;
+  padding:10px;
+  border-radius:12px;
+  border:1px solid #ddd;
+}
+
+.cart-btn{
+  padding:10px 14px;
+  border:none;
+  background:#111;
+  color:white;
+  border-radius:12px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  padding:40px;
+}
+
+.card{
+  background:white;
+  border-radius:22px;
+  text-align:center;
+  padding:20px;
+}
+
+.img-wrap img{
+  width:100%;
+  border-radius:12px;
+}
+
+.price{
+  font-weight:600;
+  margin:10px 0;
+}
+
+.btn-row{
+  display:flex;
+  gap:10px;
+}
+
+.order,.cart{
+  flex:1;
+  padding:8px;
+  border-radius:20px;
+  border:none;
+  color:white;
+}
+
+.order{ background:#111; }
+.cart{ background:#0071e3; }
+
+.footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:40px;
+}

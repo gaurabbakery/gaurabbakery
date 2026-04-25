@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bakery Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="header">
+  <h1 class="brand">GAURAB BAKERY</h1>
+
+  <div class="topbar">
+    <input id="search" placeholder="Search..." onkeyup="searchProduct()">
+
+    <button class="cart-btn" onclick="goCart()">
+      Cart (<span id="cartCount">0</span>)
+    </button>
+  </div>
+</div>
+
+<div class="grid" id="productGrid"></div>
+
+<footer class="footer">
+  <h2>Gaurab Bakery</h2>
+  <p>Fresh baked happiness every day. </p>
+  <p>📍 Bhairav Aryal Marg, Kathmandu </p> <p>📞 +977 9860228877</p>
+  <p>  ✉ gaurabbakery@gmail.com </p>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
